@@ -6,5 +6,5 @@ import FGarage from './FGarage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<FGarage/>);
+root.render(<Garage/>);
 // or root.render(<FCar/>);

@@ -3,14 +3,18 @@ import Car from './Car.js';
 import FCar from './FCar.js';
 
 class Garage extends React.Component{
+  isFComponents = true;
   render(){
-    return (
+    return(
       <div>
-        <h1>Who lives in my Garage</h1>
-        <Car color="red" model="all"/>
-        <FCar color="green" model="anyone"/>
-      </div>
-    )
+      <h1>Who lives in my Garage</h1>
+      {this.isFComponents  == true ? 
+      <Car brand="teste"/>:
+      <FCar color="blue" model="all"/>
+      }
+        
+    </div>
+    );
   }
 }
 
