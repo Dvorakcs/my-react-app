@@ -1,8 +1,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Garage from './Garage';
+import FGarage from './FGarage';
 
-const myFirstElement = <h1>Hello React!</h1>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myFirstElement);
+root.render(<FGarage/>);
+// or root.render(<FCar/>);
