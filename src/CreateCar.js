@@ -14,7 +14,7 @@ class CreaterCar extends React.Component{
     return(
       <form>
         <label>Enter Name Car
-          <input type="text"  onChange={ (e) => this.state.valueImputNameCar = e.target.value}/>
+          <input type="text" onChange={ (e) => this.state.valueImputNameCar = e.target.value}/>
         </label>
         <button onClick={ () => { console.log(this.state.valueImputNameCar)}}></button>
       </form>
