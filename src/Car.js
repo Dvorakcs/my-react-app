@@ -1,14 +1,34 @@
 import React from 'react';
 class Car extends React.Component{
-  constructor(){
-    super();
-    this.state = null;
-    this.modelCar = null
+  constructor(props){
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model:"Mustang",
+      color: "red",
+      year:1964,
+    }
+  }
+  chengeColor = () => {
+    this.setState({color:"blue"})
+  }
+  // FUNCAO CHAMADA SEMPRE ANTES DE RENDERIZAR O COMPONENTE NO DOM
+  // ATUALIZA O ESTADO DO COMPONENT
+  static getDerivedStateFromProps(props,state){
+    return {brand:props.brand ?? "Ford"}
   }
   render(){
-    this.state = this.props.color ?? {color:'red'};
-    this.modelCar = this.props.model ?? {model:'Mustang'}
-    return <h2>Hi, I am a {this.state} and model: {this.modelCar} car</h2>
+   return ( 
+    <div>
+      <h1>My {this.state.brand}</h1>
+      <p>
+        It is a {this.state.color}, {this.state.model}
+        from {this.state.year}.
+      </p>
+      <button type='button'
+      onClick={this.chengeColor}>Change color</button>
+    </div>
+   )
   }
 } 
 export default Car;

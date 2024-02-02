@@ -5,7 +5,7 @@ function FGarage(){
   return(
     <div>
     <h1>Who lives in my Garage</h1>
-    <Car color="green" model="anyone"/>
+    <Car brand="teste"/>
     <FCar color="blue" model="all"/>
   </div>
   );
