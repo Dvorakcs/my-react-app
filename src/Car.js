@@ -1,13 +1,13 @@
 import React from 'react';
 class Car extends React.Component{
-  index = 1;
   constructor(props){
     super(props);
     this.state = {
-      brand: "Ford",
-      model:"Mustang",
-      color: "red",
-      year:1964,
+      id: props.id,
+      brand: props.brand,
+      model:props.model,
+      color: props.color,
+      year:props.year,
     }
   }
   chengeColor = () => {
@@ -17,11 +17,11 @@ class Car extends React.Component{
   // ATUALIZA O ESTADO DO COMPONENT
   //
   static getDerivedStateFromProps(props,state){
-    return {brand:props.brand ?? "Ford"}
+    return 
   }
   //SEMPRE QUANDO TERMINA DE INICIALIZAR NO DOM
   componentDidMount(){
-      this.setState({model:"null"})
+      this.setState()
   }
   //Retorna valor true/false para continuar a renderizacao ou nao
   shouldComponentUpdate() {
@@ -31,12 +31,12 @@ class Car extends React.Component{
     
   }
   componentWillUnmount() {
-    alert("The component named Header is about to be unmounted.");
+   // alert("The component named Header is about to be unmounted.");
   }
   render(){
    return ( 
-    <div id='carId'>
-      <h1>My {this.state.brand}</h1>
+    <div>
+      <h1>My {this.state.id} {this.state.brand}</h1>
       <p>
         It is a {this.state.color}, {this.state.model}, 
         from {this.state.year}.{this.index}
